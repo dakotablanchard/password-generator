@@ -1,4 +1,4 @@
-var userLength = 0
+var userLength
 var choice = []
 
 var lowerChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
@@ -14,8 +14,10 @@ generateBtn.addEventListener("click", writePassword);  //When button is clicked,
 
 // Write password to the #password input
 function writePassword() {
+  console.log("Write password:", userLength)
   userInput()
-  var password = generatePassword();
+  console.log("After user input and write password", userLength)
+  var password = generatePassword(); // The variable 'password' stores this function, so this function needs to return what is going to be printed
   var passwordText = document.querySelector("#password"); // What gets printed in the box
   
   passwordText.value = password; // What gets printed in the box is a value of the variable 'password' 
@@ -23,16 +25,12 @@ function writePassword() {
 }
 
 function generatePassword() { 
-  // The variable 'password' stores this function, so this function needs to return what is going to be printed
-  var newPass = ""
-  userLength = 8
-  for (var i = 0; i < userLength; i++) {
 
+  var newPass = ""
+  for (var i = 0; i < userLength; i++) {
     var randomIndex = Math.floor(Math.random() * choice.length);
     newPass = newPass + choice[randomIndex];
   }
-
-
 
   return newPass  /* This is where value containing generated password will go */ ; 
 } 
@@ -40,8 +38,8 @@ function generatePassword() {
 
 function userInput() {
 
-  var userLength = prompt("How long do you want your password to be? Enter a number 8-128") // This will get a number from the user
-  var choice = [];
+    userLength = prompt("How long do you want your password to be? Enter a number 8-128") // This will get a number from the user
+
     if (userLength < 8 || userLength > 128) {
       alert("Character length invalid.")
       return false;
@@ -62,9 +60,7 @@ function userInput() {
     if (confirm("Do you want to include special characters? Okay for yes, Cancel for no")) { // This will get a boolean value from the user
       choice = choice.concat(spChar);
     }
-
 }
-
 
 
 
