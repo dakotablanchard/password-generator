@@ -31,6 +31,8 @@ By following the link, you will be taken to a website that looks like the follow
 
 ## Credits
 
+[SOURCE STARTER CODE](https://github.com/coding-boot-camp/friendly-parakeet)
+
 [Pop up prompts in JavaScript](https://www.w3schools.com/js/js_popup.asp)
 
 [For loops](https://www.w3schools.com/js/js_loop_for.asp)
